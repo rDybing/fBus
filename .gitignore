@@ -1,0 +1,9 @@
+# media folder
+media/
+# binary Windows
+*.exe
+# binary Linux
+fBus
+# zippy thingies
+*.zip
+
