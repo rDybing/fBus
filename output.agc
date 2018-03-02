@@ -5,21 +5,67 @@
  * Project: msSignServe
  *
  * *******************************************/
- 
- // ************************************************ Static Functions **************************************************
- 
-function setBackground()
+
+// ************************************************ Splash Functions ***************************************************
+
+function placeSplash()
 	
 	spr as spriteProp_t
 	
 	spr.posX = 0
 	spr.posY = 0
-	spr.width = 100
-	spr.height = 100
+	spr.width = device.width
+	spr.height = device.height
 	
-	imageSetup(sprite.back, layer.back, spr, media.back)
-
+	imageSetup(sprite.skyssSplash, layer.back, spr, media.skyssSplash)
+	
 endFunction
+
+function clearSplash()
+	
+	clearSprites(sprite.skyssSplash, sprite.skyssSplash)
+	clearSprites(sprite.skyssSplashTransmit, sprite.skyssSplashTransmit)
+	
+endFunction
+
+function placeSplashTransmit()
+	
+	spr as spriteProp_t
+	
+	spr.posX = pos.transmitX
+	spr.posY = pos.transmitY
+	spr.width = GetImageWidth(media.skyssSplashTransmit0)
+	spr.height = GetImageHeight(media.skyssSplashTransmit0)
+	
+	if GetSpriteExists(sprite.skyssSplashTransmit)
+		deleteSprite(sprite.skyssSplashTransmit)
+	endif
+	
+	CreateSprite(sprite.skyssSplashTransmit, media.skyssSplashTransmit0)
+	AddSpriteAnimationFrame(sprite.skyssSplashTransmit, media.skyssSplashTransmit0)
+	AddSpriteAnimationFrame(sprite.skyssSplashTransmit, media.skyssSplashTransmit1)
+	AddSpriteAnimationFrame(sprite.skyssSplashTransmit, media.skyssSplashTransmit2)
+	AddSpriteAnimationFrame(sprite.skyssSplashTransmit, media.skyssSplashTransmit3)
+	SetSpritePosition(sprite.skyssSplashTransmit, spr.posX, spr.posY)
+	SetSpriteColorAlpha(sprite.skyssSplashTransmit, 255)
+	SetSpriteDepth(sprite.skyssSplashTransmit, layer.front)
+	SetSpriteFrame(sprite.skyssSplashTransmit, 3)
+	SetSpriteVisible(sprite.skyssSplashTransmit, 1)
+	SetSpriteSize(sprite.skyssSplashTransmit, spr.width, spr.height)	
+	
+endFunction
+
+function updateSplashTransmit()
+	
+	index as integer
+	
+	index = random(1, 4)
+	
+	SetSpriteFrame(sprite.skyssSplashTransmit, index)
+	
+endFunction
+
+// ************************************************ Main View Functions ************************************************
 
 // ************************************************ Chores Functions ***************************************************
 
@@ -113,40 +159,3 @@ function swapSprites(start as integer, stop as integer, in as integer)
 	next i
 				
 endFunction
-
-function initWaitSprite()
-	
-	spr as spriteProp_t
-	
-	spr.posX = 17
-	spr.posY = 30
-	spr.height = -1
-	spr.width = 20
-	
-	createSprite(sprite.waiting, media.waiting[0])
-	for i = 1 to media.waiting.length
-		AddSpriteAnimationFrame(sprite.waiting, media.waiting[i])
-	next i
-	SetSpriteFrame(sprite.waiting, 1)
-	SetSpriteDepth(sprite.waiting, layer.B)
-	setSpriteVisible(sprite.waiting, false)
-	setSpriteSize(sprite.waiting, spr.width, spr.height)
-	SetSpritePosition(sprite.waiting, spr.posX - round(spr.width / 2), spr.posY)
-	StopSprite(sprite.waiting)
-	
-endFunction
-
-function setWaitStatus(isTrue as integer)
-	
-	setSpriteFrame(sprite.waiting, 1)
-	setSpriteVisible(sprite.waiting, isTrue)
-	
-	if isTrue
-		//clearText(txt.menu, txt.menu) // temp whilst no video
-		PlaySprite(sprite.waiting)
-	else
-		StopSprite(sprite.waiting)
-	endif
-	
-endFunction
-

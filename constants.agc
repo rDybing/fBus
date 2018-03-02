@@ -22,25 +22,32 @@
  *
  * *******************************************/
 
-	layer.front				= 0
-	layer.A					= 10
-	layer.B					= 20
-	layer.C					= 30
-	layer.D					= 40
-	layer.back				= 999
+	layer.front					= 0
+	layer.A						= 10
+	layer.B						= 20
+	layer.C						= 30
+	layer.D						= 40
+	layer.back					= 999
+			
+	txt.ver						= 1000
+	txt.clockH					= 1100
+	txt.clockDot				= 1101
+	txt.clockM					= 1102
 		
-	txt.ver					= 1000
-	
-	sprite.back				= 8999	
-	
+	sprite.skyssSplash			= 8900
+	sprite.skyssMain			= 8901
+	sprite.skyssSplashTransmit	= 8910	
+	// fonts	
+	media.fontA					= 8000
+	media.fontB					= 8001
+	media.fontC					= 8002
 	// images	
-	media.font				= 9000
-	media.fontB				= 9001
-	media.back				= 9004
-
-	for i = 0 to media.waiting.length
-		media.waiting[i] = 9100 + i
-	next i
+	media.skyssSplash			= 8900
+	media.skyssMain				= 8901
+	media.skyssSplashTransmit0	= 8910
+	media.skyssSplashTransmit1	= 8911
+	media.skyssSplashTransmit2	= 8912
+	media.skyssSplashTransmit3	= 8913
 	
 endFunction
 
@@ -51,10 +58,10 @@ function initColor()
 	color[0].g = 255
 	color[0].b = 255
 	color[0].a = 255
-	// dark red
-	color[1].r = 110
-	color[1].g = 60
-	color[1].b = 57
+	// black
+	color[1].r = 0
+	color[1].g = 0
+	color[1].b = 0
 	color[1].a = 255
 	// grey
 	color[2].r = 160
@@ -66,6 +73,30 @@ function initColor()
 	color[3].g = 192
 	color[3].b = 24
 	color[3].a = 255
+	// red
+	color[4].r = 255
+	color[4].g = 0
+	color[4].b = 0
+	color[4].a = 255
+	// green
+	color[5].r = 255
+	color[5].g = 192
+	color[5].b = 24
+	color[5].a = 255
+	// blue
+	color[6].r = 255
+	color[6].g = 192
+	color[6].b = 24
+	color[6].a = 255
+	
+endFunction
+
+function initPositions()
+	
+	pos.clockX = 634
+	pos.clockY = 7
+	pos.transmitX = 470
+	pos.transmitY = 0
 	
 endFunction
 

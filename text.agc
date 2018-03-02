@@ -8,6 +8,62 @@
  
 // ************************************************ Placement **********************************************************
 
+function placeClockText(c as clock_t, colID as integer)
+	
+	mt as txtProp_t
+	clockH as string 
+	clockM as string 
+		
+	setFontProperties(color[colID].r, color[colID].g, color[colID].b, media.fontC, 36.5)	
+	mt = setTextProperties(pos.clockX, pos.clockY, 0)
+	
+	if c.hours < 10
+		clockH = "0" + str(c.hours)
+	else
+		clockH = str(c.hours)
+	endif
+	
+	if c.minutes < 10
+		clockM = "0" + str(c.minutes)
+	else
+		clockM = str(c.minutes)
+	endif
+	
+	clearText(txt.clockH, txt.clockM)
+	
+	createText(txt.clockH, clockH)
+	createText(txt.clockDot, ".")
+	createText(txt.clockM, clockM)
+	textDraw(txt.clockH, mt)
+	mt.startX = pos.clockX + 31
+	textDraw(txt.clockDot, mt)
+	mt.startX = pos.clockX + 38
+	textDraw(txt.clockM, mt)
+	
+endFunction
+
+function updateClockText(c as clock_t)
+	
+	clockH as string 
+	clockM as string 
+	
+	if c.hours < 10
+		clockH = "0" + str(c.hours)
+	else
+		clockH = str(c.hours)
+	endif
+	
+	if c.minutes < 10
+		clockM = "0" + str(c.minutes)
+	else
+		clockM = str(c.minutes)
+	endif
+	
+	SetTextString(txt.clockH, clockH)
+	SetTextString(txt.clockM, clockM)
+	
+endFunction
+
 // ************************************************ Chores *************************************************************
 
 function fadeText(startTxt as integer, stopTxt as integer, dir as string)
@@ -76,7 +132,9 @@ function clearText(start as integer, stop as integer)
 
 endFunction
 
-function setTextProperties(mt ref as txtProp_t, x as float, y as float, align as integer)
+function setTextProperties(x as float, y as float, align as integer)
+	
+	mt as txtProp_t
 	
 	mt.startX = x
 	mt.startY = y
