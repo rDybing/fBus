@@ -13,8 +13,8 @@ type font_t
 	b						as integer
 	size					as float
 	interval				as integer
-endType		
-		
+endType
+
 type media_t			
 	fontA					as integer
 	fontB					as integer
@@ -25,14 +25,19 @@ type media_t
 	skyssSplashTransmit1	as integer
 	skyssSplashTransmit2	as integer
 	skyssSplashTransmit3	as integer
-endType		
-		
+	skyssMainTransmit0		as integer
+	skyssMainTransmit1		as integer
+	skyssMainTransmit2		as integer
+	skyssMainTransmit3		as integer
+endType
+
 type sprite_t		
 	back					as integer
 	waiting					as integer
 	skyssSplash				as integer
 	skyssMain				as integer
 	skyssSplashTransmit 	as integer
+	skyssMainTransmit		as integer
 endType
 
 type layer_t
@@ -42,22 +47,22 @@ type layer_t
 	C						as integer
 	D						as integer
 	back					as integer
-endType		
-		
+endType
+
 type mouse_t		
 	x						as integer
 	y						as integer
 	hit						as integer
 	spriteID 				as integer
-endType		
-		
+endType
+
 type txt_t		
 	ver						as integer
 	clockH					as integer
 	clockDot				as integer
 	clockM					as integer
-endType		
-		
+endType
+
 type txtProp_t			
 	startY					as float
 	startX					as float
@@ -66,50 +71,44 @@ type txtProp_t
 	offset 					as integer
 	align 					as integer
 	size					as float
-endType		
-		
+endType
+
 type spriteProp_t		
 	posX					as float
 	posY					as float
 	width					as float
 	height					as float
-endType		
-		
+endType
+
 type device_t		
 	width					as integer
 	height					as integer
 	aspect					as float
 	os						as string
 	model					as string 
-endType		
-		
+endType
+
 type color_t		
 	r						as integer
 	g						as integer
 	b						as integer
 	a						as integer
-endType		
-		
+endType
+
 type position_t		
 	clockX					as integer
 	clockY					as integer
 	transmitX				as integer
 	transmitY				as integer
-endType		
-		
+endType
+
 type timer_t		
 	old						as integer
 	new						as integer
 	freq					as integer
-endType		
-		
+endType
+
 type clock_t		
 	hours					as integer
 	minutes					as integer
-endType		
-		
-type tweens_t		
-	foo						as integer
-endType			
-
-
+endType

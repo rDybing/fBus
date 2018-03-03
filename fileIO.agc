@@ -21,5 +21,9 @@ function importMedia()
 	loadImage(media.skyssSplashTransmit1, "skyssSplashTransmit1.png")
 	loadImage(media.skyssSplashTransmit2, "skyssSplashTransmit2.png")
 	loadImage(media.skyssSplashTransmit3, "skyssSplashTransmit3.png")
-		
+	loadImage(media.skyssMainTransmit0, "skyssMainTransmit0.png")
+	loadImage(media.skyssMainTransmit1, "skyssMainTransmit1.png")
+	loadImage(media.skyssMainTransmit2, "skyssMainTransmit2.png")
+	loadImage(media.skyssMainTransmit3, "skyssMainTransmit3.png")
+	
 endFunction

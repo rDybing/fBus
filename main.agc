@@ -77,11 +77,4 @@ function main()
 	
 	splashScreen()
 
-	do
-
-		print("Hello")
-		sync()
-
-	loop
-
 endFunction
