@@ -49,13 +49,3 @@ function getButton(sprID as integer)
 	endif
 	
 endFunction out
-
-function getKey(key as integer)
-	
-	out as integer = false
-	
-	if GetRawKeyPressed(key)
-		out = true
-	endif
-	
-endFunction out
