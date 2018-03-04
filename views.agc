@@ -32,18 +32,21 @@ endFunction
 
 function mainScreen()
 	
-	quit as integer = false
-	transmitTimer as timer_t
-	transmitTimer = setTimer(750)
+	quit			as integer = false
+	xPos			as integer = 0
+	transmitTimer	as timer_t
+	transmitTimer	= setTimer(750)
 	
 	placeMain()
 	placeClockText(getClock(), 0)
 	placeMainTransmit()
+	placeMainStripe()
 	
 	repeat
 		if getTimer(transmitTimer)
 			updateTransmit(sprite.skyssMaintransmit)
 		endif
+		xPos = updateMainStripe(xPos)
 		updateClockText(getClock())
 		sync()		
 	until quit

@@ -25,5 +25,6 @@ function importMedia()
 	loadImage(media.skyssMainTransmit1, "skyssMainTransmit1.png")
 	loadImage(media.skyssMainTransmit2, "skyssMainTransmit2.png")
 	loadImage(media.skyssMainTransmit3, "skyssMainTransmit3.png")
+	loadImage(media.skyssMainStripe, "skyssStripe.png")
 	
 endFunction

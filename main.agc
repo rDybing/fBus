@@ -19,13 +19,11 @@
 #include "constants.agc"
 
 #constant false		= 0
-#constant true		= 1
-#constant nil		= -1
-#constant spaceKey	= 32
-#constant escapeKey	= 27
+#constant true			= 1
+#constant nil			= -1
 
 global media		as media_t				// constant IDs
-global font			as font_t				// constant IDs
+global font		as font_t				// constant IDs
 global layer		as layer_t				// constant layer values
 global sprite		as sprite_t				// constant IDs
 global txt			as txt_t				// constant IDs
@@ -43,7 +41,8 @@ SetRandomSeed(GetUnixTime())
 device.os = GetDeviceBaseName()
 device.model = GetDeviceType()
 
-SetAntialiasMode(1)
+SetAntialiasMode(0)
+SetResolutionMode(1) 
 // hard set to my HTC A9s resolution
 device.width = 720
 device.height = 1280
@@ -76,5 +75,6 @@ main()
 function main()
 	
 	splashScreen()
+	mainScreen()
 
 endFunction

@@ -28,15 +28,17 @@
 	layer.C						= 30
 	layer.D						= 40
 	layer.back					= 999
-			
+
 	txt.ver						= 1000
 	txt.clockH					= 1100
 	txt.clockDot				= 1101
 	txt.clockM					= 1102
-		
+
 	sprite.skyssSplash			= 8900
 	sprite.skyssMain			= 8901
-	sprite.skyssSplashTransmit	= 8910	
+	sprite.skyssSplashTransmit	= 8910
+	sprite.skyssMainTransmit	= 8911
+	sprite.skyssMainStripeStart	= 8920
 	// fonts	
 	media.fontA					= 8000
 	media.fontB					= 8001
@@ -48,7 +50,17 @@
 	media.skyssSplashTransmit1	= 8911
 	media.skyssSplashTransmit2	= 8912
 	media.skyssSplashTransmit3	= 8913
-	
+	media.skyssMainTransmit0	= 8914
+	media.skyssMainTransmit1	= 8915
+	media.skyssMainTransmit2	= 8916
+	media.skyssMainTransmit3	= 8917
+	media.skyssMainStripe		= 8920
+
+	sprite.skyssMainStripe.length = 4
+	for i = 0 to sprite.skyssMainStripe.length
+		sprite.skyssMainStripe[i] = sprite.skyssMainStripeStart + i
+	next i 
+
 endFunction
 
 function initColor()
@@ -93,10 +105,12 @@ endFunction
 
 function initPositions()
 	
-	pos.clockX = 634
-	pos.clockY = 7
-	pos.transmitX = 470
-	pos.transmitY = 0
+	pos.clockX		= 634
+	pos.clockY		= 7
+	pos.transmitX	= 470
+	pos.transmitY	= 0
+	pos.stripeX		= 32
+	pos.stripeY		= 468
 	
 endFunction
 

@@ -66,7 +66,7 @@ function placeMain()
 	spr.width = device.width
 	spr.height = device.height
 	
-	imageSetup(sprite.skyssMain, layer.back, spr, media.skyssMain)
+	imageSetup(sprite.skyssMain, layer.A, spr, media.skyssMain)
 	
 endFunction
 
@@ -96,6 +96,43 @@ function placeMainTransmit()
 	SetSpriteSize(sprite.skyssMainTransmit, spr.width, spr.height)	
 	
 endFunction
+
+function placeMainStripe()
+
+	spr as spriteProp_t
+
+	spr.posX = pos.stripeX
+	spr.posY = pos.stripeY
+	spr.width = GetImageWidth(media.skyssMainStripe)
+	spr.height = GetImageHeight(media.skyssMainStripe)
+
+	for i = 0 to sprite.skyssMainStripe.length
+		deleteSprite(sprite.skyssMainStripe[i])
+		createSprite(sprite.skyssMainStripe[i], media.skyssMainStripe)
+		SetSpriteSize(sprite.skyssMainStripe[i], spr.width, spr.height)
+		setSpritePosition(sprite.skyssMainStripe[i], spr.posX + (spr.width * i), spr.posY)
+		SetSpriteDepth(sprite.skyssMainStripe[i], layer.B)
+		SetSpriteVisible(sprite.skyssMainStripe[i], 1)
+	next i
+	
+endFunction
+
+function updateMainStripe(x as integer)
+
+	w as integer
+	w = GetImageWidth(media.skyssMainStripe)
+
+	if x > w - 1
+		x = 0
+	endif
+
+	for i = 0 to sprite.skyssMainStripe.length
+		SetSpritePosition(sprite.skyssMainStripe[i], pos.stripeX + (w * i) - x, getSpriteY(sprite.skyssMainStripe[i]))
+	next i
+
+	inc x, 2
+
+endFunction x
 
 // ************************************************ Common Functions ***************************************************
 

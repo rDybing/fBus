@@ -29,6 +29,7 @@ type media_t
 	skyssMainTransmit1		as integer
 	skyssMainTransmit2		as integer
 	skyssMainTransmit3		as integer
+	skyssMainStripe			as integer
 endType
 
 type sprite_t		
@@ -38,6 +39,8 @@ type sprite_t
 	skyssMain				as integer
 	skyssSplashTransmit 	as integer
 	skyssMainTransmit		as integer
+	skyssMainStripeStart	as integer
+	skyssMainStripe			as integer[]
 endType
 
 type layer_t
@@ -100,6 +103,8 @@ type position_t
 	clockY					as integer
 	transmitX				as integer
 	transmitY				as integer
+	stripeX					as integer
+	stripeY					as integer
 endType
 
 type timer_t		
