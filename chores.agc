@@ -35,15 +35,22 @@ function getClock()
 
 	out as clock_t
 	timeStr as string
-	timeH as string
-	timeM as string
 	
 	timeStr = GetCurrentTime()
 	
-	timeH = GetStringToken(timeStr, ":", 1)
-	timeM = GetStringToken(timeStr, ":", 2)
+	out.hours = val(GetStringToken(timeStr, ":", 1))
+	out.minutes = val(GetStringToken(timeStr, ":", 2))
 	
-	out.hours = val(timeH)
-	out.minutes = val(timeM)
+endFunction out
+
+function getDate()
+	
+	out as date_t
+	dateStr as string
+	
+	dateStr = GetCurrentDate()
+	
+	out.day = val(getStringToken(dateStr, "-", 3))
+	out.month = val(getStringToken(dateStr, "-", 2))
 	
 endFunction out

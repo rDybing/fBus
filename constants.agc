@@ -33,6 +33,8 @@
 	txt.clockH					= 1100
 	txt.clockDot				= 1101
 	txt.clockM					= 1102
+	txt.dateD					= 1103
+	txt.dateM					= 1104
 
 	sprite.skyssSplash			= 8900
 	sprite.skyssMain			= 8901
@@ -43,6 +45,7 @@
 	media.fontA					= 8000
 	media.fontB					= 8001
 	media.fontC					= 8002
+	media.fontD					= 8003
 	// images	
 	media.skyssSplash			= 8900
 	media.skyssMain				= 8901
@@ -107,10 +110,18 @@ function initPositions()
 	
 	pos.clockX		= 634
 	pos.clockY		= 7
+	pos.dateX		= 344
+	pos.dateY		= 256
 	pos.transmitX	= 470
 	pos.transmitY	= 0
 	pos.stripeX		= 32
 	pos.stripeY		= 468
 	
 endFunction
+
+function initMonths()
+	
+	mnd as integer[11] = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+	
+endFunction mnd
 

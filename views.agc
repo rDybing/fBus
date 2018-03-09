@@ -34,11 +34,14 @@ function mainScreen()
 	
 	quit			as integer = false
 	xPos			as integer = 0
+	dayMonths		as integer[]
 	transmitTimer	as timer_t
 	transmitTimer	= setTimer(750)
+	dayMonths		= initMonths()
 	
 	placeMain()
 	placeClockText(getClock(), 0)
+	placeDateText(getDate(), 21, dayMonths, 1)
 	placeMainTransmit()
 	placeMainStripe()
 	

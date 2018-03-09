@@ -64,6 +64,36 @@ function updateClockText(c as clock_t)
 	
 endFunction
 
+function placeDateText(date as date_t, days as integer, daysMonths as integer[], colID as integer)
+	
+	mt as txtProp_t
+	dateD as string 
+	dateM as string
+	
+	setFontProperties(color[colID].r, color[colID].g, color[colID].b, media.fontD, 60)	
+	mt = setTextProperties(pos.dateX, pos.dateY, 0)
+	
+	clearText(txt.dateD, txt.dateM)
+	
+	dateD = str(date.day)
+	dateM = str(date.month)
+	
+	if date.day < 10
+		dateD = "0" + dateD
+	endif
+	
+	if date.month < 10
+		dateM = "0" + dateM
+	endif
+	
+	createText(txt.dateD, dateD)
+	createText(txt.dateM, dateM)
+	textDraw(txt.dateD, mt)
+	mt.startX = pos.dateX + 55
+	textDraw(txt.dateM, mt)
+	
+endFunction
+
 // ************************************************ Chores *************************************************************
 
 function textDraw(id as integer, mt as txtProp_t)

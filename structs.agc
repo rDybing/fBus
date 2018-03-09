@@ -19,6 +19,7 @@ type media_t
 	fontA					as integer
 	fontB					as integer
 	fontC					as integer
+	fontD					as integer
 	skyssSplash				as integer
 	skyssMain				as integer
 	skyssSplashTransmit0	as integer
@@ -64,6 +65,8 @@ type txt_t
 	clockH					as integer
 	clockDot				as integer
 	clockM					as integer
+	dateD					as integer
+	dateM					as integer
 endType
 
 type txtProp_t			
@@ -101,6 +104,8 @@ endType
 type position_t		
 	clockX					as integer
 	clockY					as integer
+	dateX					as integer
+	dateY					as integer
 	transmitX				as integer
 	transmitY				as integer
 	stripeX					as integer
@@ -116,4 +121,9 @@ endType
 type clock_t		
 	hours					as integer
 	minutes					as integer
+endType
+
+type date_t
+	day						as integer
+	month					as integer
 endType

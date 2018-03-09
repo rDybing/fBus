@@ -74,7 +74,7 @@ main()
 
 function main()
 	
-	splashScreen()
+	//splashScreen()
 	mainScreen()
 
 endFunction

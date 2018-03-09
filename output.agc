@@ -67,6 +67,7 @@ function placeMain()
 	spr.height = device.height
 	
 	imageSetup(sprite.skyssMain, layer.A, spr, media.skyssMain)
+	//SetSpriteColorAlpha(sprite.skyssMain, 64)
 	
 endFunction
 
