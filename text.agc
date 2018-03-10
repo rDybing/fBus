@@ -64,7 +64,7 @@ function updateClockText(c as clock_t)
 	
 endFunction
 
-function placeDateText(date as date_t, days as integer, daysMonths as integer[], colID as integer)
+function placeDateText(date as date_t, days as integer, daysMonth as integer[], colID as integer)
 	
 	mt as txtProp_t
 	dateD as string 
@@ -74,6 +74,13 @@ function placeDateText(date as date_t, days as integer, daysMonths as integer[],
 	mt = setTextProperties(pos.dateX, pos.dateY, 0)
 	
 	clearText(txt.dateD, txt.dateM)
+
+	if date.day + days > daysMonth[date.month - 1]
+		date.day = (date.day + days) - daysMonth[date.month - 1]
+		inc date.month
+	else
+		date.day = date.day + days
+	endif
 	
 	dateD = str(date.day)
 	dateM = str(date.month)

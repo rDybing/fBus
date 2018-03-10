@@ -111,7 +111,7 @@ function initPositions()
 	pos.clockX		= 634
 	pos.clockY		= 7
 	pos.dateX		= 344
-	pos.dateY		= 256
+	pos.dateY		= 255
 	pos.transmitX	= 470
 	pos.transmitY	= 0
 	pos.stripeX		= 32
