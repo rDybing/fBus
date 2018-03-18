@@ -1,3 +1,4 @@
+
 [apk_settings]
 alias=
 app_icon_path=
@@ -51,15 +52,15 @@ FILE_7=structs.agc;-1
 FILE_8=constants.agc;-1
 
 [files]
-FILE_NAME_0=1;main.agc;0;0
-FILE_NAME_1=0;views.agc;234;1
-FILE_NAME_2=0;output.agc;3812;2
+FILE_NAME_0=0;main.agc;0;0
+FILE_NAME_1=1;views.agc;0;1
+FILE_NAME_2=0;output.agc;1634;2
 FILE_NAME_3=0;input.agc;710;3
-FILE_NAME_4=0;text.agc;2224;4
+FILE_NAME_4=0;text.agc;1809;4
 FILE_NAME_5=0;fileIO.agc;308;5
 FILE_NAME_6=0;chores.agc;294;6
 FILE_NAME_7=0;structs.agc;859;7
-FILE_NAME_8=0;constants.agc;621;8
+FILE_NAME_8=0;constants.agc;2258;8
 
 [project]
 description=

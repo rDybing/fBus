@@ -65,16 +65,16 @@ SetWindowAllowResize(1)
 SetDisplayAspect(device.aspect)
 SetScissor(0,0,0,0)
 SetOrientationAllowed(1, 1, 0, 0)
-SetSyncRate(30, 0)
+SetSyncRate(20, 0)
 UseNewDefaultFonts(1)
-SetPrintSize(20.0)
+SetPrintSize(25.0)
 SetPrintColor(255, 255, 255)
 
 main()
 
 function main()
 	
-	//splashScreen()
+	splashScreen()
 	mainScreen()
 
 endFunction

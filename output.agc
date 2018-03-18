@@ -131,7 +131,7 @@ function updateMainStripe(x as integer)
 		SetSpritePosition(sprite.skyssMainStripe[i], pos.stripeX + (w * i) - x, getSpriteY(sprite.skyssMainStripe[i]))
 	next i
 
-	inc x, 2
+	inc x, 4
 
 endFunction x
 
@@ -141,7 +141,7 @@ function updateTransmit(spriteID)
 	
 	index as integer
 	
-	index = random(1, 4)
+	index = random(1, 3)
 	
 	SetSpriteFrame(spriteID, index)
 	

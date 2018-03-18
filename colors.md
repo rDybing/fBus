@@ -32,3 +32,7 @@
 * y: 468
 * w: 356
 * h: 048
+
+#### stripe animation speed
+
+* 4:46 end to end
